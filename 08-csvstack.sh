@@ -1,13 +1,11 @@
 #!/bin/bash
 
+LESS="-S -R"
+
 in2csv ne_1033_data.xlsx > ne_1033_data.csv
 
 cat ne_1033_data.csv ks_1033_data.csv > region.csv
-grep -C 1 county region.csv
-
-printf "\n"
-yes = | head -n 80 | tr -d '\n'
-printf "\n\n"
+cat -n region.csv | grep --color=always -C 1 county | less
 
 csvstack ne_1033_data.csv ks_1033_data.csv > region.csv
-grep -C 1 county region.csv
+cat -n region.csv | grep --color=always -C 1 county | less

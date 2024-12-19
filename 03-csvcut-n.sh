@@ -1,3 +1,3 @@
 #!/bin/bash
 
-csvcut -n data.csv | less
+csvcut -n data.csv
