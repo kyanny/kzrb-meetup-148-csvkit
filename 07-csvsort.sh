@@ -3,8 +3,13 @@
 # csvsort
 # CSV をソートする
 
-sort -t , -k 2 -r ghe-es-index-status.csv | csvlook | less
+csvcut -c state,county,total_cost data.csv > data-for-sort.csv
+csvlook data-for-sort.csv | less
 
-csvsort -c Primary ghe-es-index-status.csv | csvlook | less
+sort -t "," -k 3 data-for-sort.csv | less
 
-csvsort -c Primary,UpToDate ghe-es-index-status.csv | csvlook | less
+sort -t "," -k 3 data-for-sort.csv | csvlook | less
+
+csvsort -c total_cost data-for-sort.csv | less
+
+csvsort -c total_cost data-for-sort.csv | csvlook | less
