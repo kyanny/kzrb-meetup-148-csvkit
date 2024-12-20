@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# csvstack
+# CSV を連結する
+
 LESS="-S -R"
 
 in2csv ne_1033_data.xlsx > ne_1033_data.csv
